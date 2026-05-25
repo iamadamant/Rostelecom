@@ -1,0 +1,2 @@
+class AbsentTableException(Exception):
+    pass

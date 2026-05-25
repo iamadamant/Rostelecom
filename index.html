@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ростелеком - Путеводитель</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fontsource-roboto@latest/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-4">
+                    <img src="https://www.rt.ru/themes/rt_ru__b2b/icons/android-chrome-512x512.png" alt="" class="w-10 h-10">
+                    <div>
+                        <h1 class="font-bold text-2xl tracking-tight text-gray-900">Ростелеком</h1>
+                        <p class="text-xs text-gray-500">Путеводитель</p>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a id="nav-home" class="nav-active px-4 py-2 text-sm font-medium transition-colors" href="index.html">
+                        Главная
+                    </a>
+                    <a href="#contacts" class="text-gray-600 hover:text-gray-900 text-sm font-medium">Контакты</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <div id="user-info" class="hidden items-center gap-3">
+                        <span class="text-sm font-medium text-gray-700 bg-gray-100 px-3 py-1 rounded-full">admin@rt.ru</span>
+                        <button onclick="logout()" class="text-sm rt-red-text font-medium hover:underline">Выйти</button>
+                    </div>
+                    <button class="md:hidden text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page: Home -->
+    <main id="page-home" class="flex-grow page-transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Column: Welcome & Login -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                            Добро пожаловать в<br>
+                            <span class="rt-red-text">Путеводитель</span>
+                        </h2>
+                        <p class="text-lg text-gray-600">
+                            Управляйте, просматривайте и контролируйте маршруты
+                        </p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Вход в систему</h3>
+                        <form class="space-y-5" id="login-form">
+                            <div>
+                                <label for="login-tel" class="block text-sm font-medium text-red-700 mb-2 hidden" id="wrong-telephone">Не правильный номер телефона</label>
+                                <label for="login-tel" class="block text-sm font-medium text-gray-700 mb-2">Номер телефона</label>
+                                <input type="text" id="login-tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all" placeholder="8-800-100-08-00" required>
+                            </div>
+                            <div>
+                                <label for="login-tel" class="block text-sm font-medium text-red-700 mb-2 hidden" id="wrong-password">Не правильный пароль</label>
+                                <label for="login-password" class="block text-sm font-medium text-gray-700 mb-2">Пароль</label>
+                                <input type="password" id="login-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all" placeholder="••••••••" required>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <input id="remember-me" type="checkbox" class="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded">
+                                    <label for="remember-me" class="ml-2 block text-sm text-gray-700">Запомнить</label>
+                                </div>
+                                <a href="#missed-password" class="text-sm rt-red-text font-medium hover:underline">Забыли пароль?</a>
+                            </div>
+                            <button type="submit" class="w-full rt-red text-white font-bold py-3 rounded-lg shadow-lg rt-red-hover transition-all duration-200 transform hover:scale-[1.02]">
+                                Войти в кабинет
+                            </button>
+                        </form>
+                        <div class="mt-6 pt-6 border-t border-gray-100">
+                            <p class="text-center text-sm text-gray-500">
+                                Нет аккаунта? <a href="#contacts" class="rt-red-text font-medium hover:underline">Обратиться к администратору</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Features -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 rt-red-border">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rt-red rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Скорость</h4>
+                                <p class="text-gray-600 text-sm">Мгновенная возможность быстро и наглядно построить и просмотреть маршрут для каждой бригады</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-500">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Безопасность</h4>
+                                <p class="text-gray-600 text-sm">Данные о перемещении не утекут третьим лицам</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-green-500">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Статистика</h4>
+                                <p class="text-gray-600 text-sm">Наглядный расход топлива и передвижения сотрудников</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r rt-red rounded-2xl shadow-lg p-6 text-white">
+                        <h4 class="font-bold text-lg mb-2">Нужна помощь?</h4>
+                        <p class="text-sm mb-4">Наши специалисты готовы помочь вам 24/7</p>
+                        <button class="bg-white rt-red-text font-bold px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                            Связаться с поддержкой
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacts" class="bg-gray-900 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="">
+                <div class="space-y-2 text-gray-400 text-sm">
+                    <span class="font-bold mb-4">Контакты:</span>
+                    <div class="">
+                        📞 8-800-100-08-00
+                    </div>
+                    <div class="">
+                        ✉️ support@rt.ru
+                    </div>
+                    <div class="">
+                        📍 Ростов Великий ул. Северная д 44/2а
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 ml-8 pt-8 text-gray-500 text-sm" id="missed-password">
+            <p>ВНИМАНИЕ! Если вы забыли пароль - обратитесь к администратору сайта. Его контактные данные представлены выше.</p>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+            <p>© 2026 ПАО «Ростелеком». Все права защищены.</p>
+        </div>
+        </div>
+    </footer>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
