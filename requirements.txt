@@ -1,4 +1,0 @@
-fastapi[standard]
-uvicorn[standard]>=0.32.0
-jwt
-motor
