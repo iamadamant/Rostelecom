@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ростелеком - Путеводитель</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fontsource-roboto@latest/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-4">
+                    <img src="https://www.rt.ru/themes/rt_ru__b2b/icons/android-chrome-512x512.png" alt="" class="w-10 h-10">
+                    <div>
+                        <h1 class="font-bold text-2xl tracking-tight text-gray-900">Ростелеком</h1>
+                        <p class="text-xs text-gray-500">Путеводитель</p>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a id="nav-home" class="px-4 py-2 text-sm font-medium transition-colors" href="routes.html">
+                        Главная
+                    </a>
+                    <a href="#" class="nav-active text-gray-600 hover:text-gray-900 text-sm font-medium">Расход топлива</a>
+                    <a href="#contacts" class="text-gray-600 hover:text-gray-900 text-sm font-medium">Контакты</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <div id="user-info" class="hidden items-center gap-3">
+                        <span class="text-sm font-medium text-gray-700 bg-gray-100 px-3 py-1 rounded-full">admin@rt.ru</span>
+                        <button onclick="logout()" class="text-sm rt-red-text font-medium hover:underline">Выйти</button>
+                    </div>
+                    <button class="md:hidden text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page: Home -->
+    <main id="page-home" class="flex-grow page-transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Column: Welcome & Login -->
+                <div class="space-y-8 mb-12">
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                            Добро пожаловать в<br>
+                            <span class="rt-red-text">Путеводитель</span>
+                        </h2>
+                        <p class="text-lg text-gray-600">
+                            Ниже приведены графики расхода топлива по дням
+                        </p>
+                    </div>
+
+
+                </div>
+                <button style="width: 150px;" class="col-start-12 mt-12 flex-1 sm:flex-none px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Экспорт
+                    </button>
+            </div>
+
+            <div class="charts-container mb-12 max-w-7xl" id="chartsContainer"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacts" class="bg-gray-900 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="">
+                <div class="space-y-2 text-gray-400 text-sm">
+                    <span class="font-bold mb-4">Контакты:</span>
+                    <div class="">
+                        📞 8-800-100-08-00
+                    </div>
+                    <div class="">
+                        ✉️ support@rt.ru
+                    </div>
+                    <div class="">
+                        📍 Ростов Великий ул. Северная д 44/2а
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+            <p>© 2026 ПАО «Ростелеком». Все права защищены.</p>
+        </div>
+        </div>
+    </footer>
+    <script src="js/fuel.js"></script>
+</body>
+
+</html>
