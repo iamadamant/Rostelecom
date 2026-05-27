@@ -6,6 +6,8 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 
+from fastapi.staticfiles import StaticFiles
+
 from bson import ObjectId
 
 import jwt
@@ -18,6 +20,8 @@ DEVELOP_MODE = False
 MIDDLE_FUEL_CONSUMPTION = 14.8
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 origins = [
     "null",
