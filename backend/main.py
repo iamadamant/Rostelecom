@@ -202,4 +202,4 @@ async def delete_entity(table_name:str, id:str):
         return Response("Invalid values", status_code=400)
 
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
