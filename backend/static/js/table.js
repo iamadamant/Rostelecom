@@ -1,3 +1,5 @@
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+
 if (document.cookie.search("user") == -1) {
     document.location = '/index.html';
 }
@@ -53,13 +55,13 @@ async function renderTable() {
                         Обновить`;
     }, 2000);
     let token = document.cookie.split("=")[1];
-    let req = await fetch('http://127.0.0.1:8000/routes', {
+    let req = await fetch(ORIGIN + 'routes', {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     });
 
-    let waited_req = await fetch('http://127.0.0.1:8000/count/closed_routes');
+    let waited_req = await fetch(ORIGIN + 'count/closed_routes');
 
     let routes = [];
     if (req.status != 400) {
@@ -173,7 +175,7 @@ async function renderTable() {
 async function setRouteToApprove() {
     let routes = JSON.parse(localStorage.getItem("routes"));
 
-    response = await fetch('http://127.0.0.1:8000/many/closed_routes', {
+    response = await fetch(ORIGIN + 'many/closed_routes', {
         method: 'POST', // Specify the method
         headers: {
             'Content-Type': 'application/json' // Inform the server of the data format

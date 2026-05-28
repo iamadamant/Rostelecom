@@ -1,6 +1,8 @@
 // =============================================
 //  AJAX-ЗАПРОСЫ
 // =============================================
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+
 async function fetchJSON(url) {
     try {
         const response = await fetch(url, {
@@ -110,7 +112,7 @@ function renderTable(employees) {
 async function init() {
     try {
         let crew_id = localStorage.getItem("crew_id");
-        let employees = await fetchJSON(`http://localhost:8000/workers/crews_code/${crew_id}`);
+        let employees = await fetchJSON(ORIGIN + `workers/crews_code/${crew_id}`);
         renderTable(employees);
 
     } catch (error) {

@@ -1,3 +1,5 @@
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+
 let crewRoutes;
 let ymapsReady = false;
 let cardMaps = {};
@@ -370,7 +372,7 @@ async function saveChanges() {
     let applied = changedRoutes["applied"];
     let canceled = changedRoutes["canceled"];
     applied.forEach(async(element) => {
-        let response = await fetch('http://127.0.0.1:8000/many/closed_routes', {
+        let response = await fetch(ORIGIN + 'many/closed_routes', {
             method: 'DELETE', // Specify the method
             headers: {
                 'Content-Type': 'application/json' // Inform the server of the data format
@@ -380,7 +382,7 @@ async function saveChanges() {
     });
 
     canceled.forEach(async(element) => {
-        let response = await fetch('http://127.0.0.1:8000/many/routes', {
+        let response = await fetch(ORIGIN + 'many/routes', {
             method: 'POST', // Specify the method
             headers: {
                 'Content-Type': 'application/json' // Inform the server of the data format
@@ -470,7 +472,7 @@ async function init() {
         "canceled": []
     }
     document.getElementById('changesBar').classList.add("hidden");
-    res = await fetch("http://localhost:8000/closed_routes");
+    res = await fetch(ORIGIN + "closed_routes");
     routesData = await res.json();
     crewRoutes = groupByCrew(routesData);
     console.log(crewRoutes);

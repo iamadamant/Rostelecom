@@ -1,11 +1,13 @@
 // =============================================
 //  КОНФИГУРАЦИЯ API
 // =============================================
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+
 const API = {
-    employees: 'http://localhost:8000/workers',
-    crews: 'http://localhost:8000/crews',
-    originalAssignments: 'http://localhost:8000/left/workers/crewed_workers',
-    setAssignment: 'http://localhost:8000/workers'
+    employees: ORIGIN + 'workers',
+    crews: ORIGIN + 'crews',
+    originalAssignments: ORIGIN + 'left/workers/crewed_workers',
+    setAssignment: ORIGIN + 'workers'
 };
 
 // Для демо-режима (без реального API)

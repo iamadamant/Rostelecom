@@ -4,8 +4,23 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from .coredb.exceptions import AbsentTableException
 from .coredb.wrappers import to_serializable
 
+import os
+
+MONGO_USER = os.environ.get("MONGO_INITDB_ROOT_USERNAME")
+MONGO_PASSWORD = os.environ.get("MONGO_INITDB_ROOT_PASSWORD")
+MONGO_HOST = os.environ.get("MONGO_HOST", "localhost")
+MONGO_PORT = int(os.environ.get("MONGO_PORT", "27017"))
+MONGO_AUTH_DB = os.environ.get("MONGO_AUTH_SOURCE", "admin")
+
+
 # Local connection
-client = AsyncIOMotorClient("localhost", 27017)
+client = AsyncIOMotorClient(
+    host=MONGO_HOST,
+    port=MONGO_PORT,
+    username=MONGO_USER,
+    password=MONGO_PASSWORD,
+    authSource=MONGO_AUTH_DB
+)
 
 way_guider = client["way_guider"]
 

@@ -1,3 +1,5 @@
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+
 async function generateHash(input) {
     const encoder = new TextEncoder();
     const data = encoder.encode(input);
@@ -57,7 +59,7 @@ async function modifyEntityModal(modalID, id, address = '', coords = [57.201725,
 async function deleteRoute(id) {
     let sure = confirm("Вы уверены, что хотите удалить запись? Востановление невозможно!");
     if (sure) {
-        let req = await fetch(`http://127.0.0.1:8000/routes/${id}`, {
+        let req = await fetch(ORIGIN + `routes/${id}`, {
             method: "DELETE"
         });
     }
@@ -78,7 +80,7 @@ async function submitForm(e) {
     console.log(formData)
     let response;
     if (id != -1) {
-        response = await fetch(`http://127.0.0.1:8000/routes/${id}`, {
+        response = await fetch(ORIGIN + `routes/${id}`, {
             method: 'PUT', // Specify the method
             headers: {
                 'Content-Type': 'application/json' // Inform the server of the data format
@@ -86,7 +88,7 @@ async function submitForm(e) {
             body: JSON.stringify(formData)
         });
     } else {
-        response = await fetch('http://127.0.0.1:8000/routes', {
+        response = await fetch(ORIGIN + 'routes', {
             method: 'POST', // Specify the method
             headers: {
                 'Content-Type': 'application/json' // Inform the server of the data format
@@ -155,7 +157,7 @@ function initMap(coordinates = [57.201725, 39.440506]) {
 }
 
 async function getBrigades() {
-    let brigs = (await fetch("http://127.0.0.1:8000/crews"));
+    let brigs = (await fetch(ORIGIN + "crews"));
     brigs = await brigs.json();
     let res = `<option value="" disabled selected>Выберите бригаду</option>`;
     brigs.forEach(element => {

@@ -1,8 +1,9 @@
 const TOTAL_CONSUMPTION = 14.8;
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
 
 async function init() {
     // ⚠️ Валидный JSON (дубликаты ключей в JSON недопустимы, пример исправлен)
-    const rawData = await (await fetch("http://localhost:8000/fuel")).json();
+    const rawData = await (await fetch(ORIGIN + "fuel")).json();
     console.log(rawData)
         // {
         //     "к806ро": { "01.02.2025": 118.4, "02.02.2025": 67.5, "05.02.2025": 89.2 },

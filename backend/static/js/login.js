@@ -1,3 +1,5 @@
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+
 if (document.cookie.search("user") != -1) {
     document.location = '/routes.html'
 }
@@ -11,7 +13,7 @@ async function handleLogin(e) {
         "telephone": document.getElementById("login-tel").value,
         "password": document.getElementById("login-password").value
     }
-    const response = await fetch('http://127.0.0.1:8000/api/login', {
+    const response = await fetch(ORIGIN + 'api/login', {
         method: 'POST', // Specify the method
         headers: {
             'Content-Type': 'application/json' // Inform the server of the data format
