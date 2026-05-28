@@ -21,8 +21,6 @@ MIDDLE_FUEL_CONSUMPTION = 14.8
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
 origins = [
     "null",
 ]
@@ -202,3 +200,6 @@ async def delete_entity(table_name:str, id:str):
         return Response(status_code=204)
     except Exception as e:
         return Response("Invalid values", status_code=400)
+
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
