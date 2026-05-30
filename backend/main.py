@@ -12,6 +12,11 @@ from bson import ObjectId
 
 import jwt
 
+import os
+
+MONGO_USER = os.environ.get("MONGO_INITDB_ROOT_USERNAME")
+print(MONGO_USER)
+
 from db.nosql_db_handler import select_as_json, insert_from_json, update_from_json, delete_from_table, get_count, SQL_JOIN
 
 SECRET_KEY = "jkvgdnhuihe98rt3v3@ih8i*N89"

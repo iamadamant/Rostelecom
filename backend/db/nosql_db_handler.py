@@ -8,9 +8,9 @@ import os
 
 MONGO_USER = os.environ.get("MONGO_INITDB_ROOT_USERNAME")
 MONGO_PASSWORD = os.environ.get("MONGO_INITDB_ROOT_PASSWORD")
-MONGO_HOST = os.environ.get("MONGOHOST", "localhost")
-MONGO_PORT = int(os.environ.get("MONGOPORT", "27017"))
-MONGO_AUTH_DB = os.environ.get("MONGOUSER", "admin")
+MONGO_HOST = os.environ.get("MONGOHOST")
+MONGO_PORT = int(os.environ.get("MONGOPORT"))
+MONGO_AUTH_DB = os.environ.get("MONGOUSER")
 
 print(MONGO_USER, MONGO_PASSWORD, MONGO_HOST, MONGO_PORT, MONGO_AUTH_DB)
 
