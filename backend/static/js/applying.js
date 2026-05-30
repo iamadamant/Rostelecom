@@ -1,4 +1,4 @@
-const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+let ORIGIN = 'https://rostelecom-production.up.railway.app/';
 
 let crewRoutes;
 let ymapsReady = false;

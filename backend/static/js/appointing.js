@@ -1,7 +1,7 @@
 // =============================================
 //  КОНФИГУРАЦИЯ API
 // =============================================
-const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+let ORIGIN = 'https://rostelecom-production.up.railway.app/';
 
 const API = {
     employees: ORIGIN + 'workers',

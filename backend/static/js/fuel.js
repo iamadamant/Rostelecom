@@ -1,5 +1,5 @@
 const TOTAL_CONSUMPTION = 14.8;
-const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+let ORIGIN = 'https://rostelecom-production.up.railway.app/';
 
 async function init() {
     // ⚠️ Валидный JSON (дубликаты ключей в JSON недопустимы, пример исправлен)

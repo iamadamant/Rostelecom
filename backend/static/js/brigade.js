@@ -1,7 +1,7 @@
 // =============================================
 //  AJAX-ЗАПРОСЫ
 // =============================================
-const ORIGIN = 'https://rostelecom-production.up.railway.app/';
+let ORIGIN = 'https://rostelecom-production.up.railway.app/';
 
 async function fetchJSON(url) {
     try {
