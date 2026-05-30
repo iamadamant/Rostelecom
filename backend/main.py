@@ -10,7 +10,7 @@ from datetime import datetime
 
 from bson import ObjectId
 
-import jwt
+from PyJWT import jwt
 
 from db.nosql_db_handler import select_as_json, insert_from_json, update_from_json, delete_from_table, get_count, SQL_JOIN
 
