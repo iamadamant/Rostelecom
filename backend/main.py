@@ -202,7 +202,4 @@ async def delete_entity(table_name:str, id:str):
         return Response("Invalid values", status_code=400)
 
 
-# app.mount("/static", StaticFiles(directory="static"), name="static")
-print("=== Registered routes ===")
-for route in app.routes:
-    print(f"{route.path} -> {[method for method in route.methods] if hasattr(route, 'methods') else ''}")
+app.mount("/static", StaticFiles(directory="static"), name="static")
