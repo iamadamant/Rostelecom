@@ -1,0 +1,1 @@
+const ORIGIN = 'https://rostelecom-production.up.railway.app/';

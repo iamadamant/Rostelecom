@@ -1,5 +1,3 @@
-let ORIGIN = 'https://rostelecom-production.up.railway.app/';
-
 let crewRoutes;
 let ymapsReady = false;
 let cardMaps = {};
