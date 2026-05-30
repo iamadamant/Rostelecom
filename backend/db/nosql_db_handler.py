@@ -6,11 +6,11 @@ from .coredb.wrappers import to_serializable
 
 import os
 
-MONGO_USER = os.environ.get("MONGO_INITDB_ROOT_USERNAME")
-MONGO_PASSWORD = os.environ.get("MONGO_INITDB_ROOT_PASSWORD")
-MONGO_HOST = os.environ.get("MONGOHOST")
-MONGO_PORT = int(os.environ.get("MONGOPORT"))
-MONGO_AUTH_DB = os.environ.get("MONGOUSER")
+MONGO_USER = "mongo"
+MONGO_PASSWORD = "hmANKdIQNLTGhSVvZivhWBDVqLCXYwKa"
+MONGO_HOST = "mongodb.railway.internal"
+MONGO_PORT = 27017
+MONGO_AUTH_DB = "mongo"
 
 print(MONGO_USER, MONGO_PASSWORD, MONGO_HOST, MONGO_PORT, MONGO_AUTH_DB)
 
