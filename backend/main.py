@@ -90,7 +90,7 @@ async def refuse_routes(data = Body()):
         return JSONResponse(res, status_code=200)
     except Exception as e:
         print(e)
-        return Response("Invalid values", status_code=400)
+        return Response("Invalid values", status_code=400 )
 
 @app.get("/count/{table_name}")
 async def get_count_table_rows(table_name: str):
@@ -203,3 +203,6 @@ async def delete_entity(table_name:str, id:str):
 
 
 # app.mount("/static", StaticFiles(directory="static"), name="static")
+print("=== Registered routes ===")
+for route in app.routes:
+    print(f"{route.path} -> {[method for method in route.methods] if hasattr(route, 'methods') else ''}")
