@@ -24,6 +24,7 @@ client = AsyncIOMotorClient(
 )
 
 way_guider = client["way_guider"]
+print(way_guider.list_collection_names())
 
 class SQL_JOIN:
     table1 = None
