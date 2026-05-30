@@ -1,4 +1,6 @@
-let ORIGIN = 'https://rostelecom-production.up.railway.app/';
+if (!ORIGIN) {
+    let ORIGIN = 'https://rostelecom-production.up.railway.app/';
+}
 
 if (document.cookie.search("user") != -1) {
     document.location = '/routes.html'

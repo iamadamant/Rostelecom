@@ -1,4 +1,6 @@
-let ORIGIN = 'https://rostelecom-production.up.railway.app/';
+if (!ORIGIN) {
+    let ORIGIN = 'https://rostelecom-production.up.railway.app/';
+}
 
 async function generateHash(input) {
     const encoder = new TextEncoder();
