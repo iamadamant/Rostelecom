@@ -24,7 +24,6 @@ client = AsyncIOMotorClient(
 )
 
 way_guider = client["way_guider"]
-print(way_guider.list_collection_names())
 
 class SQL_JOIN:
     table1 = None
@@ -126,3 +125,8 @@ async def delete_from_table(table_name, value, col_name='_id'):
 
 async def get_count(table_name):
     return await way_guider[table_name].estimated_document_count()
+
+async def init():
+    print(way_guider.list_collection_names())
+
+init()
