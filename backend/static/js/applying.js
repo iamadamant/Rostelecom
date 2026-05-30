@@ -19,7 +19,6 @@ function groupByCrew(data) {
     const groups = {};
     data.sort(compare);
     data.forEach(route => {
-        right
         const crewId = route.crews_code;
         if (!groups[crewId]) {
             groups[crewId] = {
