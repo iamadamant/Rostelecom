@@ -7,12 +7,9 @@ from .coredb.wrappers import to_serializable
 import os
 
 MONGO_USER = "mongo"
-MONGO_PASSWORD = "hmANKdIQNLTGhSVvZivhWBDVqLCXYwKa"
+MONGO_PASSWORD = "ohEkzcDJvOWlSzOuiJLckdWEqGGOBVAE"
 MONGO_HOST = "mongodb.railway.internal"
 MONGO_PORT = 27017
-MONGO_AUTH_DB = "mongo"
-
-print(MONGO_USER, MONGO_PASSWORD, MONGO_HOST, MONGO_PORT, MONGO_AUTH_DB)
 
 # Local connection
 client = AsyncIOMotorClient(
@@ -20,7 +17,6 @@ client = AsyncIOMotorClient(
     port=MONGO_PORT,
     username=MONGO_USER,
     password=MONGO_PASSWORD,
-    authSource=MONGO_AUTH_DB
 )
 
 way_guider = client["way_guider"]
